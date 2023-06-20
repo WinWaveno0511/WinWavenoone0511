@@ -1,3 +1,4 @@
+import random
 import time
 import sys
 from Adafruit_IO import MQTTClient
@@ -29,7 +30,7 @@ client.loop_background()
 
 while True:
     time.sleep(5)
-    client.publish("sensor1", 1)
-    client.publish("sensor2", 1)
-    client.publish("sensor3", 1)
+    client.publish("sensor1", random.randint(0, 100))
+    client.publish("sensor2", random.randint(0, 80))
+    client.publish("sensor3", random.randint(0, 70))
     pass
