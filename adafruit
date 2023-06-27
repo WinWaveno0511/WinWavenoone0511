@@ -1,6 +1,7 @@
 import random
 import time
 import sys
+
 import requests
 from Adafruit_IO import MQTTClient
 
@@ -58,9 +59,12 @@ def init_global_equation():
 
 while True:
     time.sleep(5)
+    x1 = random.randint(0,100)
+    x2 = random.randint(0,80)
+    x3 = random.randint (0,70)
     client.publish("sensor1", random.randint(0, 100))
     client.publish("sensor2", random.randint(0, 80))
     client.publish("sensor3", random.randint(0, 70))
-    x4 = modify_value(3, 4, 5)
+    x4 = modify_value(x1,x2,x3)
     print(x4)
     pass
